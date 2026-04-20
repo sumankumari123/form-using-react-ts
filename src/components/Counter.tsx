@@ -13,23 +13,36 @@ const Counter = () => {
           }
         };
   return (
-    <section className='  h-[30rem] mx-auto '>
-        <button className='my-6 py-2 px-3 border-2 border-blue-400 text-3xl'>{count}</button> 
-        <div className=' my-4' >
-        <button className='border-2 border-blue-400 py-1 px-2.5 text-2xl text-gray-500 mx-2 cursor-pointer' onClick={increment}>Increment</button>
-        <button
-  disabled={count === 0}
-  className={`border-2 py-1 px-2.5 text-2xl mx-2 ${
-    count === 0
-      ? "border-blue-400 text-gray-500 cursor-not-allowed"
-      : "border-blue-400 text-gray-500 cursor-pointer"
-  }`}
-  onClick={decrement}
->
-  Decrement
-</button>
-        </div>
-    </section>
+    <section className="min-h-screen flex flex-col justify-center items-center px-4">
+  
+  <button className="my-6 py-2 px-4 border-2 border-blue-400 text-2xl md:text-3xl">
+    {count}
+  </button> 
+
+  <div className="my-4 flex flex-col sm:flex-row gap-4">
+    
+    <button
+      className="border-2 border-blue-400 py-2 px-4 text-lg md:text-2xl text-gray-500 cursor-pointer"
+      onClick={increment}
+    >
+      Increment
+    </button>
+
+    <button
+      disabled={count === 0}
+      className={`border-2 py-2 px-4 text-lg md:text-2xl ${
+        count === 0
+          ? "border-blue-400 text-gray-500 cursor-not-allowed"
+          : "border-blue-400 text-gray-500 cursor-pointer"
+      }`}
+      onClick={decrement}
+    >
+      Decrement
+    </button>
+
+  </div>
+
+</section>
   )
 }
 
