@@ -3,7 +3,6 @@ import { Routes, Route, Link } from "react-router-dom";
 
 
 const SignIN = () => {
-  const [isSignUp, setIsSignUp] = useState<boolean>(false);
   const [form, setFormData] = useState<{
     name: string;
     email: string;
@@ -18,7 +17,8 @@ const SignIN = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  console.log("form", form);
+const getDataFromLocalStorage = localStorage.getItem('auth')
+console.log("getDataFromLocalStorage", getDataFromLocalStorage)
 
   return (
     <main className="min-h-screen flex items-center justify-center px-4">
@@ -45,12 +45,10 @@ const SignIN = () => {
     />
 
     <button className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition">
-      Sign Up
+      Sign In
     </button>
 <p>Already have an account?
-<nav>
-        <Link to="/sign-up">Sign In</Link>
-      </nav>
+        <Link to="/sign-up">Sign Up</Link>
      </p>
   </form>
   
