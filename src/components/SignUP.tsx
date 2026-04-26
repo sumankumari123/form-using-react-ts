@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const SignUP = () => {
+  const navigate = useNavigate();
+
   const [form, setFormData] = useState<{
     name: string;
     email: string;
@@ -35,11 +37,21 @@ if (!form.password.trim()) {
   return;
 }
 
+const existingData = localStorage.getItem("auth");
 
-if(form.name && form.email && form.password){
-const setDataInLocalStorage = localStorage.setItem("auth",JSON.stringify(form))
-// console.log("setDataInLocalStorage", setDataInLocalStorage)
+// Step 1: convert to array
+let users = existingData ? JSON.parse(existingData) : [];
+
+if (!Array.isArray(users)) {
+  users = [users];
 }
+
+// users.push(form);
+// console.log(existingData, "existingData")
+// console.log(users, "users")
+
+navigate("/home")
+localStorage.setItem("auth", JSON.stringify(users));
 setFormData({
     name: "",
     email: "",
