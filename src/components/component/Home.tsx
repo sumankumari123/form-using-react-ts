@@ -1,9 +1,12 @@
 import React from 'react'
+import QizeUi from './Quiz/QizeUi'
 
 const Home = () => {
   return (
-    <div>
-      <h1>This is home page</h1>
+    <div className=' px-4 py-3.5'>
+      <h1>Quiz App</h1>
+      <QizeUi/>
+
     </div>
   )
 }

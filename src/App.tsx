@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<SignIN />} />
-        <Route path="/sign-up" element={<SignUP />} />
+        {/* <Route path="/" element={<SignIN />} />
+        <Route path="/sign-up" element={<SignUP />} /> */}
         <Route path="/home" element={<Home />} />
 
         // {/* <Counter/> */}

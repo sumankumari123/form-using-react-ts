@@ -39,12 +39,16 @@ e.preventDefault();
     }
  
    const existingData = localStorage.getItem('auth');
+    //  console.log("existingData signIn", existingData) 
+     if(existingData=== null){
+      alert("You have no account please SingUP")
+     }
    const presentData = JSON.parse(existingData);
 
    const matchedUser = presentData.find(( u: any)=>
     u.email === form.email && u.password === form.password)
-  console.log("existingData signIn", presentData) 
-console.log("matchedUser", matchedUser)
+  // console.log("existingData signIn", presentData) 
+// console.log("matchedUser", matchedUser)
 
   if(matchedUser){
     alert("Login Successful ✅");
